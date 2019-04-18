@@ -3,22 +3,21 @@ import './MainSummary.css';
 
 export default class MainSummary extends Component {
   render() {
-    const summary = Object.keys(this.props.selected).map(key => (
+    const { selected } = this.props;
+    const summary = Object.keys(selected).map(key => (
       <div className='summary__option' key={key}>
         <div className='summary__option__label'>{key} </div>
-        <div className='summary__option__value'>
-          {this.props.selected[key].name}
-        </div>
+        <div className='summary__option__value'>{selected[key].name}</div>
         <div className='summary__option__cost'>
           {new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: 'USD',
-          }).format(this.props.selected[key].cost)}
+          }).format(selected[key].cost)}
         </div>
       </div>
     ));
-    const total = Object.keys(this.props.selected).reduce(
-      (acc, curr) => acc + this.props.selected[curr].cost,
+    const total = Object.keys(selected).reduce(
+      (acc, curr) => acc + selected[curr].cost,
       0
     );
     return (

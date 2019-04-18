@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
+import './Features.css';
 
 export default class Features extends Component {
   render() {
-    const { item, key } = this.props;
+    const {
+      newValue,
+      index,
+      feature,
+      featureClass,
+      updateFeature,
+    } = this.props;
+
     return (
-      <li key={this.props.index} className='feature__item'>
+      <li key={index} className='feature__item'>
         <div
-          className={this.props.featureClass}
-          onClick={e => this.props.updateFeature(key, item)}
+          className={featureClass}
+          onClick={e => updateFeature(feature, newValue)}
         >
-          {item.name}(
+          {newValue.name}(
           {new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: 'USD',
-          }).format(item.cost)}
+          }).format(newValue.cost)}
           )
         </div>
       </li>
