@@ -1,8 +1,8 @@
 import React from 'react';
 import FeatureItem from '../FeatureItem/FeatureItem';
 
-const FeatureList = ({ features, selected, updateFeature }) => {
-  const featureList = Object.keys(features).map(key => {
+const FeatureList = ({ features, selected, updateFeature }) =>
+  Object.keys(features).map(key => {
     const options = features[key].map((item, index) => {
       const selectedClass =
         item.name === selected[key].name ? 'feature__selected' : '';
@@ -26,7 +26,5 @@ const FeatureList = ({ features, selected, updateFeature }) => {
       </div>
     );
   });
-  return featureList;
-};
 
 export default FeatureList;

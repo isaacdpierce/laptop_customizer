@@ -1,15 +1,17 @@
 import React from 'react';
 import './MainForm.css';
-import FeatureForm from '../FeatureForm/FeatureForm';
+import FeatureList from '../FeatureList/FeatureList';
 
-const MainForm = ({ features, selected, updateFeature }) => {
+const MainForm = ({ title, features, selected, updateFeature }) => {
   return (
-    <FeatureForm
-      title='TECH SPECS AND CUSTOMIZATIONS'
-      features={features}
-      selected={selected}
-      updateFeature={updateFeature}
-    />
+    <section className='main__form'>
+      <h4>{title}</h4>
+      <FeatureList
+        features={features}
+        selected={selected}
+        updateFeature={updateFeature}
+      />
+    </section>
   );
 };
 

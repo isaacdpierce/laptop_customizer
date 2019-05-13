@@ -47,6 +47,7 @@ class App extends Component {
         <Header product='Laptops' title='Customize your laptops' />
         <main>
           <MainForm
+            title='TECH SPECS AND CUSTOMIZATIONS'
             features={features}
             selected={selected}
             updateFeature={(feature, newValue) =>
