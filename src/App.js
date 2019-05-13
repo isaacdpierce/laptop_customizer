@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MainForm from './MainForm/MainForm';
 import MainSummary from './MainSummary/MainSummary';
+import Header from './Header/Header';
 import './App.css';
 
 class App extends Component {
@@ -43,11 +44,7 @@ class App extends Component {
 
     return (
       <div className='App'>
-        <header>
-          <h1>ELF Computing</h1>
-          <h3>Laptops</h3>
-          <h5>Customize your laptop</h5>
-        </header>
+        <Header product='Laptops' title='Customize your laptops' />
         <main>
           <MainForm
             features={features}
